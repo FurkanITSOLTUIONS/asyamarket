@@ -9,18 +9,44 @@ document.addEventListener("DOMContentLoaded", () => {
         "nl": { add: "In Winkelwagen", del: "Verwijderen", toast: "Product toegevoegd aan winkelwagen!" },
         "en": { add: "Add to Cart", del: "Remove", toast: "Product added to cart!" },
         "fr": { add: "Ajouter au Panier", del: "Supprimer", toast: "Produit ajouté au panier!" },
-        "ar": { add: "أضf إلى السلة", del: "إزالة", toast: "تمت إضافة المنتج إلى السلة!" }
+        "ar": { add: "أضف إلى السلة", del: "إزالة", toast: "تمت إضافة المنتج إلى السلة!" }
+    };
+
+    const productData = {
+        "tr": [
+            { id: 1, name: "Asya Taze Dana Kıyma", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+            { id: 2, name: "Asya Beyaz Peynir 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+            { id: 3, name: "Asya Zeytinyağı 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+            { id: 4, name: "Asya Taze Salatalık", price: 2.20, img: "../../images/salatalik.jpg" }
+        ],
+        "nl": [
+            { id: 1, name: "Asya Vers Rundergehakt", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+            { id: 2, name: "Asya Witte Kaas 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+            { id: 3, name: "Asya Olijfolie 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+            { id: 4, name: "Asya Verse Komkommer", price: 2.20, img: "../../images/salatalik.jpg" }
+        ],
+        "en": [
+            { id: 1, name: "Asya Fresh Minced Beef", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+            { id: 2, name: "Asya White Cheese 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+            { id: 3, name: "Asya Olive Oil 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+            { id: 4, name: "Asya Fresh Cucumber", price: 2.20, img: "../../images/salatalik.jpg" }
+        ],
+        "fr": [
+            { id: 1, name: "Asya Bœuf Haché Frais", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+            { id: 2, name: "Asya Fromage Blanc 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+            { id: 3, name: "Asya Huile d'Olive 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+            { id: 4, name: "Asya Concombre Frais", price: 2.20, img: "../../images/salatalik.jpg" }
+        ],
+        "ar": [
+            { id: 1, name: "آسيا لحم بقر مفروم", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+            { id: 2, name: "آسيا جبنة بيضاء 500 غرام", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+            { id: 3, name: "آسيا زيت زيتون 1 لتر", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+            { id: 4, name: "آسيا خيار طازج", price: 2.20, img: "../../images/salatalik.jpg" }
+        ]
     };
 
     const t = translations[htmlLang] || translations["en"];
-
-    // VATAN ile eşlenmiş ürünler
-    let products = [
-        { id: 1, name: "Vatan Taze Dana Kıyma", price: 12.50, img: "../../images/dana-kiyma.jpg" },
-        { id: 2, name: "Sütaş Beyaz Peynir 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
-        { id: 3, name: "Ekol Zeytinyağı 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
-        { id: 4, name: "Taze Çengelköy Salatalık", price: 2.20, img: "../../images/salatalik.jpg" }
-    ];
+    let products = productData[htmlLang] || productData["en"];
 
     const productGrid = document.getElementById("product-grid");
     const addProductForm = document.getElementById("add-product-form");
@@ -89,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Sepet Hesaplama Mantığı
     const updateCartTotal = () => {
         let total = 0;
         document.querySelectorAll(".cart-item").forEach(item => {
