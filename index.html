@@ -8,31 +8,12 @@
 </head>
 <body>
     <header class="main-header">
-        <a href="./" class="logo-link">
-            <h1 class="brand-logo-text">ASYA <span>MARKET</span></h1>
-        </a>
-        
-        <button class="hamburger-btn" id="hamburger-btn">
-            <span></span><span></span><span></span>
-        </button>
-
-        <nav class="main-nav">
-            <a href="./" class="active">Ana Sayfa</a>
-            <a href="#urunler">Ürünler</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
-
+        <a href="./" class="logo-link"><img src="images/asya_market_logo.jpg" alt="Asya Market" class="brand-logo"></a>
+        <button class="hamburger-btn" id="hamburger-btn"><span></span><span></span><span></span></button>
+        <nav class="main-nav"><a href="./" class="active">Ana Sayfa</a><a href="#urunler">Ürünler</a><a href="#iletisim">İletişim</a></nav>
         <section class="header-actions">
-            <nav class="lang-selector">
-                <a href="./" class="active-lang">TR</a>
-                <a href="nl/">NL</a>
-                <a href="en/">EN</a>
-                <a href="fr/">FR</a>
-                <a href="ar/">AR</a>
-            </nav>
-            <a href="cart/tr/" class="cart-button">
-                Sepet <span id="cart-badge">0</span>
-            </a>
+            <nav class="lang-selector"><a href="./" class="active-lang">TR</a><a href="nl/">NL</a><a href="en/">EN</a><a href="fr/">FR</a><a href="ar/">AR</a></nav>
+            <a href="cart/tr/" class="cart-button">Sepet <span id="cart-badge">0</span></a>
         </section>
     </header>
 
@@ -41,6 +22,7 @@
             <div class="hero-content">
                 <h1>Asya'nın Tazeliği, Zele'nin Merkezinde</h1>
                 <p>En kaliteli ürünler, en uygun fiyatlarla Asya Market'te.</p>
+                <a href="#urunler" class="btn-primary">Hemen İncele</a>
             </div>
         </section>
 
@@ -48,24 +30,40 @@
             <div class="admin-container">
                 <h2>Ürün Yönetimi (Admin Paneli)</h2>
                 <form id="add-product-form" class="admin-form">
-                    <input type="text" id="prod-name" placeholder="Ürün Adı (Örn: Helal Sosis)" required>
+                    <input type="text" id="prod-name" placeholder="Ürün Adı" required>
                     <input type="number" id="prod-price" placeholder="Fiyat (€)" step="0.01" required>
-                    <input type="url" id="prod-img" placeholder="Resim Linki (https://...)" required>
+                    <input type="url" id="prod-img" placeholder="Resim Linki" required>
                     <button type="submit" class="btn-admin">Ürünü Ekle</button>
                 </form>
             </div>
         </section>
 
+        <section id="firsatlar" class="daily-promo-section">
+            <div class="promo-container">
+                <div class="promo-content">
+                    <span class="promo-badge">Günün Fırsatı</span>
+                    <h2>Vatan Özel Dana Sucuk</h2>
+                    <p>Sadece bugüne özel! Kendi üretimimiz olan %100 dana sucukta kaçırılmayacak indirim.</p>
+                    <div class="promo-price">
+                        <span class="old-price">€15.90</span>
+                        <span class="new-price">€11.99 <span>/ kg</span></span>
+                    </div>
+                    <button class="add-to-cart-btn">Sepete Ekle</button>
+                </div>
+                <div class="promo-image-wrapper">
+                    <img src="images/promo-urun.jpg" alt="Dana Sucuk" width="400" height="400" class="promo-img">
+                </div>
+            </div>
+        </section>
+
         <section id="urunler" class="products-section">
-            <header class="section-header">
-                <h2>Güncel Ürünlerimiz</h2>
-            </header>
-            <article class="product-grid" id="product-grid">
-            </article>
+            <header class="section-header"><h2>Güncel Ürünlerimiz</h2></header>
+            <article class="product-grid" id="product-grid"></article>
         </section>
     </main>
 
     <div id="toast-container"></div>
+    <footer id="iletisim" class="main-footer"><div class="footer-bottom"><p>&copy; 2026 Asya Market | Zele - IT Solutions</p></div></footer>
     <script src="script.js"></script>
 </body>
 </html>
