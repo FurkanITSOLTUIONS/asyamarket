@@ -1,60 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
     let cartCount = 0;
     const cartBadge = document.getElementById("cart-badge");
-    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
     const toastContainer = document.getElementById("toast-container");
-    const htmlLang = document.documentElement.lang;
+    const htmlLang = document.documentElement.lang || "tr";
 
-    // Toast Mesajları
-    const toastMessages = {
-        "tr": "Ürün sepete eklendi!",
-        "nl": "Product toegevoegd aan winkelwagen!",
-        "en": "Product added to cart!",
-        "fr": "Produit ajouté au panier!",
-        "ar": "تمت إضافة المنتج إلى السلة!"
+    const translations = {
+        "tr": { add: "Sepete Ekle", del: "Sil", toast: "Ürün sepete eklendi!" },
+        "nl": { add: "In Winkelwagen", del: "Verwijderen", toast: "Product toegevoegd aan winkelwagen!" },
+        "en": { add: "Add to Cart", del: "Remove", toast: "Product added to cart!" },
+        "fr": { add: "Ajouter au Panier", del: "Supprimer", toast: "Produit ajouté au panier!" },
+        "ar": { add: "أضf إلى السلة", del: "إزالة", toast: "تمت إضافة المنتج إلى السلة!" }
     };
-// Hamburger Menü İşlemleri
-    const hamburgerBtn = document.getElementById("hamburger-btn");
-    const mainNav = document.querySelector(".main-nav");
-    const headerActions = document.querySelector(".header-actions");
 
-    if (hamburgerBtn) {
-        hamburgerBtn.addEventListener("click", () => {
-            mainNav.classList.toggle("active-mobile");
-            headerActions.classList.toggle("active-mobile");
-        });
-    }
-    const showToast = (msgKey = null) => {
+    const t = translations[htmlLang] || translations["en"];
+
+    // VATAN ile eşlenmiş ürünler
+    let products = [
+        { id: 1, name: "Vatan Taze Dana Kıyma", price: 12.50, img: "../../images/dana-kiyma.jpg" },
+        { id: 2, name: "Sütaş Beyaz Peynir 500g", price: 8.99, img: "../../images/beyaz-peynir.jpg" },
+        { id: 3, name: "Ekol Zeytinyağı 1L", price: 9.45, img: "../../images/zeytinyagi.jpg" },
+        { id: 4, name: "Taze Çengelköy Salatalık", price: 2.20, img: "../../images/salatalik.jpg" }
+    ];
+
+    const productGrid = document.getElementById("product-grid");
+    const addProductForm = document.getElementById("add-product-form");
+
+    const showToast = () => {
         if (!toastContainer) return;
-        const message = msgKey || toastMessages[htmlLang] || toastMessages["en"];
         const toast = document.createElement("div");
         toast.className = "toast";
-        toast.textContent = message;
-        
+        toast.textContent = t.toast;
         toastContainer.appendChild(toast);
         setTimeout(() => toast.remove(), 3000);
     };
 
-    // Ana Sayfa Sepete Ekleme
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            cartCount++;
-            if (cartBadge) cartBadge.textContent = cartCount;
-            
-            button.style.backgroundColor = "var(--primary-blue)";
-            button.style.color = "var(--white)";
-            setTimeout(() => {
-                button.style.backgroundColor = "";
-                button.style.color = "";
-            }, 200);
-
-            showToast();
+    const renderProducts = () => {
+        if (!productGrid) return;
+        productGrid.innerHTML = "";
+        
+        products.forEach(product => {
+            const card = document.createElement("section");
+            card.className = "product-card";
+            card.innerHTML = `
+                <img src="${product.img}" alt="${product.name}" class="product-img" onerror="this.src='../../images/placeholder.jpg'">
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="price">€${product.price.toFixed(2)}</p>
+                    <div class="action-buttons">
+                        <button class="add-to-cart-btn">${t.add}</button>
+                        <button class="delete-btn" data-id="${product.id}">${t.del}</button>
+                    </div>
+                </div>
+            `;
+            productGrid.appendChild(card);
         });
-    });
 
-    // Göstermelik Sepet Sayfası Mantığı (+ / - / Sil)
-    const cartItems = document.querySelectorAll(".cart-item");
-    
+        attachProductEvents();
+    };
+
+    const attachProductEvents = () => {
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const idToRemove = parseInt(e.target.getAttribute("data-id"));
+                products = products.filter(p => p.id !== idToRemove);
+                renderProducts();
+            });
+        });
+
+        document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                cartCount++;
+                if (cartBadge) cartBadge.textContent = cartCount;
+                showToast();
+            });
+        });
+    };
+
+    if (addProductForm) {
+        addProductForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("prod-name").value;
+            const price = parseFloat(document.getElementById("prod-price").value);
+            const img = document.getElementById("prod-img").value;
+
+            products.push({ id: Date.now(), name: name, price: price, img: img });
+            renderProducts();
+            addProductForm.reset();
+        });
+    }
+
+    // Sepet Hesaplama Mantığı
     const updateCartTotal = () => {
         let total = 0;
         document.querySelectorAll(".cart-item").forEach(item => {
@@ -62,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const qty = parseInt(item.querySelector(".qty-input").value);
             total += price * qty;
         });
-
         const tax = total * 0.06;
         const grandTotal = total + tax;
 
@@ -75,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(grandTotalEl) grandTotalEl.innerText = '€' + grandTotal.toFixed(2);
     };
 
-    cartItems.forEach(item => {
+    document.querySelectorAll(".cart-item").forEach(item => {
         const minusBtn = item.querySelector(".minus-btn");
         const plusBtn = item.querySelector(".plus-btn");
         const qtyInput = item.querySelector(".qty-input");
@@ -87,21 +121,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(val < 10) qtyInput.value = val + 1;
                 updateCartTotal();
             });
-
             minusBtn.addEventListener("click", () => {
                 let val = parseInt(qtyInput.value);
                 if(val > 1) qtyInput.value = val - 1;
                 updateCartTotal();
             });
-
             removeBtn.addEventListener("click", () => {
                 item.style.transform = "scale(0.9)";
                 item.style.opacity = "0";
-                setTimeout(() => {
-                    item.remove();
-                    updateCartTotal();
-                }, 300);
+                setTimeout(() => { item.remove(); updateCartTotal(); }, 300);
             });
         }
     });
+
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const mainNav = document.querySelector(".main-nav");
+    const headerActions = document.querySelector(".header-actions");
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener("click", () => {
+            mainNav.classList.toggle("active-mobile");
+            headerActions.classList.toggle("active-mobile");
+        });
+    }
+
+    renderProducts();
 });
