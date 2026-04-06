@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier | Vatan Mega Supermarkt</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header class="main-header">
+        <button class="hamburger-btn" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="../../fr/" class="logo-link">
+            <img src="../../images/vatan_logo.jpg" alt="Logo" width="250" height="80" class="brand-logo">
+        </a>
+        <nav class="main-nav">
+            <a href="../../fr/">Retour à l'accueil</a>
+        </nav>
+    </header>
+
+    <main class="cart-page-container">
+        <h1 class="cart-title">Mon Panier</h1>
+        
+        <div class="cart-layout">
+            <section class="cart-items" id="cart-items-container">
+                <article class="cart-item">
+                    <img src="../../images/dana-kiyma.jpg" alt="Bœuf Haché" width="100" height="75">
+                    <div class="item-details">
+                        <h3>Bœuf Haché Frais Vatan</h3>
+                        <p class="item-price" data-price="12.50">€12.50</p>
+                    </div>
+                    <div class="item-quantity-wrapper">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                    <button class="remove-btn">Supprimer</button>
+                </article>
+            </section>
+
+            <aside class="cart-summary">
+                <h2>Résumé de la commande</h2>
+                <div class="summary-row">
+                    <span>Sous-total:</span>
+                    <span id="sub-total">€12.50</span>
+                </div>
+                <div class="summary-row">
+                    <span>TVA (6%):</span>
+                    <span id="tax-amount">€0.75</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="grand-total">€13.25</span>
+                </div>
+                <button class="btn-primary checkout-btn">Passer à la caisse</button>
+            </aside>
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+    <script src="../../script.js"></script>
+</body>
+</html>
