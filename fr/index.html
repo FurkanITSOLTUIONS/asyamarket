@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vatan Mega Supermarkt | Zele</title>
+    <title>Asya Market | Achats Premium</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header class="main-header">
-        <button class="hamburger-btn" id="hamburger-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <a href="./" class="logo-link">
-            <img src="../images/vatan_logo.jpg" alt="Vatan Mega Supermarkt Logo" width="250" height="80" class="brand-logo">
-        </a>
-        
-        <nav class="main-nav">
-            <a href="./" class="active">Accueil</a>
-            <a href="#urunler">Produits</a>
-            <a href="#firsatlar">Offres</a>
-            <a href="#iletisim">Contact</a>
-        </nav>
-
+        <a href="../" class="logo-link"><img src="../images/asya_market_logo.jpg" alt="Asya Market" class="brand-logo"></a>
+        <button class="hamburger-btn" id="hamburger-btn"><span></span><span></span><span></span></button>
+        <nav class="main-nav"><a href="./" class="active">Accueil</a><a href="#urunler">Produits</a><a href="#iletisim">Contact</a></nav>
         <section class="header-actions">
-            <nav class="lang-selector">
-                <a href="../">TR</a>
-                <a href="../nl/">NL</a>
-                <a href="../en/">EN</a>
-                <a href="./" class="active-lang">FR</a>
-                <a href="../ar/">AR</a>
-            </nav>
-            <a href="../cart/fr/" class="cart-button">
-                Panier <span id="cart-badge">0</span>
-            </a>
+            <nav class="lang-selector"><a href="../">TR</a><a href="../nl/">NL</a><a href="../en/">EN</a><a href="./" class="active-lang">FR</a><a href="../ar/">AR</a></nav>
+            <a href="../cart/fr/" class="cart-button">Panier <span id="cart-badge">0</span></a>
         </section>
     </header>
 
     <main>
         <section class="hero-banner">
             <div class="hero-content">
-                <h1>Achats Frais, de Qualité et Abordables</h1>
-                <p>À votre service au cœur de Zele, avec l'assurance Vatan Mega.</p>
+                <h1>La Fraîcheur de l'Asie à Zele</h1>
+                <p>Produits de qualité supérieure aux meilleurs prix chez Asya Market.</p>
                 <a href="#urunler" class="btn-primary">Découvrez Maintenant</a>
+            </div>
+        </section>
+
+        <section class="admin-panel">
+            <div class="admin-container">
+                <h2>Gestion des Produits (Admin)</h2>
+                <form id="add-product-form" class="admin-form">
+                    <input type="text" id="prod-name" placeholder="Nom du Produit" required>
+                    <input type="number" id="prod-price" placeholder="Prix (€)" step="0.01" required>
+                    <input type="url" id="prod-img" placeholder="URL de l'image" required>
+                    <button type="submit" class="btn-admin">Ajouter</button>
+                </form>
             </div>
         </section>
 
@@ -52,61 +43,22 @@
                 <div class="promo-content">
                     <span class="promo-badge">Offre du Jour</span>
                     <h2>Saucisse de Bœuf Spéciale Vatan</h2>
-                    <p>Seulement aujourd'hui ! Ne manquez pas cette réduction sur notre saucisse de bœuf 100% artisanale. Jusqu'à épuisement des stocks.</p>
-                    <div class="promo-price">
-                        <span class="old-price">€15.90</span>
-                        <span class="new-price">€11.99 <span>/ kg</span></span>
-                    </div>
+                    <p>Seulement aujourd'hui ! Ne manquez pas cette réduction sur notre saucisse de bœuf 100% artisanale.</p>
+                    <div class="promo-price"><span class="old-price">€15.90</span><span class="new-price">€11.99 <span>/ kg</span></span></div>
                     <button class="add-to-cart-btn">Ajouter au Panier</button>
                 </div>
-                <div class="promo-image-wrapper">
-                    <img src="../images/promo-urun.jpg" alt="Saucisse Vatan" width="400" height="400" class="promo-img">
-                </div>
+                <div class="promo-image-wrapper"><img src="../images/promo-urun.jpg" alt="Saucisse" class="promo-img"></div>
             </div>
         </section>
 
         <section id="urunler" class="products-section">
-            <header class="section-header">
-                <h2>Produits en Vedette</h2>
-            </header>
-            <article class="product-grid">
-                <section class="product-card">
-                    <img src="../images/dana-kiyma.jpg" alt="Bœuf Haché" width="400" height="300" class="product-img">
-                    <div class="product-info">
-                        <h3>Bœuf Haché Frais Vatan</h3>
-                        <p class="price">€12.50 <span>/ kg</span></p>
-                        <button class="add-to-cart-btn">Ajouter au Panier</button>
-                    </div>
-                </section>
-                <section class="product-card">
-                    <img src="../images/beyaz-peynir.jpg" alt="Fromage Blanc" width="400" height="300" class="product-img">
-                    <div class="product-info">
-                        <h3>Sütaş Fromage Blanc 500g</h3>
-                        <p class="price">€8.99</p>
-                        <button class="add-to-cart-btn">Ajouter au Panier</button>
-                    </div>
-                </section>
-                <section class="product-card">
-                    <img src="../images/zeytinyagi.jpg" alt="Huile d'Olive" width="400" height="300" class="product-img">
-                    <div class="product-info">
-                        <h3>Huile d'Olive Ekol 1L</h3>
-                        <p class="price">€9.45</p>
-                        <button class="add-to-cart-btn">Ajouter au Panier</button>
-                    </div>
-                </section>
-                <section class="product-card">
-                    <img src="../images/salatalik.jpg" alt="Concombre" width="400" height="300" class="product-img">
-                    <div class="product-info">
-                        <h3>Concombre Frais Çengelköy</h3>
-                        <p class="price">€2.20 <span>/ kg</span></p>
-                        <button class="add-to-cart-btn">Ajouter au Panier</button>
-                    </div>
-                </section>
-            </article>
+            <header class="section-header"><h2>Nos Produits</h2></header>
+            <article class="product-grid" id="product-grid"></article>
         </section>
     </main>
 
     <div id="toast-container"></div>
+    <footer id="iletisim" class="main-footer"><div class="footer-bottom"><p>&copy; 2026 Asya Market | Zele - IT Solutions</p></div></footer>
     <script src="../script.js"></script>
 </body>
 </html>
