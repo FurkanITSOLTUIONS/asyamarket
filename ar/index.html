@@ -1,4 +1,138 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Asya Market | كتالوج مميز</title><link rel="stylesheet" href="../style.css"></head>
-<body><a class="skip-link" href="#main-content">تخطى إلى المحتوى</a><header class="main-header"><div class="container header-inner"><a href="./" class="logo-link"><img src="../images/asya_market_logo.jpg" alt="Asya Market" class="brand-logo" width="58" height="58"><div class="brand-copy"><strong>Asya Market</strong><span>تجربة تسوق مميزة في زيلي</span></div></a><nav class="main-nav"><a href="./" class="active">الرئيسية</a><a href="#catalog">الكتالوج</a><a href="#prices">قائمة الأسعار</a><a href="#admin">الإدارة</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></nav><div class="header-tools"><nav class="lang-selector" aria-label="محدد اللغة"><a href="../tr/">TR</a><a href="../nl/">NL</a><a href="../en/">EN</a><a href="../fr/">FR</a><a href="../ar/" class="active-lang">AR</a></nav><a class="cart-button" href="../cart/ar/">السلة <span class="cart-badge" id="cart-badge">0</span></a></div><button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="فتح القائمة"><span></span><span></span><span></span></button></div></header><main id="main-content"><section class="hero-banner"><div class="container hero-grid"><div class="hero-copy"><span class="hero-kicker">مختارات آسيا ماركت</span><h1>كتالوج بواجهة أنظف، عرض أسعار أوضح، وإدارة أفضل.</h1><p>هذه الواجهة متعددة اللغات تجمع بين تصفح المنتجات والإدارة المباشرة وتجربة سلة أسرع.</p><div class="hero-actions"><a href="#catalog" class="btn-primary">استعرض الكتالوج</a><a href="#admin" class="btn-secondary">أضف منتجاً</a></div><div class="hero-stats"><div class="hero-stat"><strong>5+</strong><span>مجموعات منتجات نشطة</span></div><div class="hero-stat"><strong>5</strong><span>لغات مدعومة</span></div><div class="hero-stat"><strong>Live</strong><span>تحكم فوري بالكتالوج</span></div></div></div><div class="hero-visual"><article class="hero-card"><img src="../images/promo-urun.jpg" alt="Featured Asya Market product" width="720" height="640"><div class="hero-card-content"><h2>المنتج المميز: أرز بسمتي ممتاز</h2><p>عرض أقوى وأسعار أوضح وطابع سوق مميز أكثر.</p></div></article></div></div></section><section class="section"><div class="container promo-strip"><article class="info-card"><h3>إدارة منتجات بالصور</h3><p>أضف مسار الصورة والسعر والفئة والوصف مباشرة من لوحة الإدارة.</p></article><article class="info-card"><h3>هيكل يركز على الكتالوج</h3><p>بطاقات أكبر ومسافات أفضل وفلاتر للفئات تجعل التصفح أسهل.</p></article><article class="info-card"><h3>جدول أسعار مدمج</h3><p>قسم منفصل للأسعار يساعد المستخدمين على مراجعة العروض بسرعة.</p></article></div></section><section class="section" id="admin"><div class="container dashboard-grid"><section class="admin-panel"><div class="admin-panel-header"><div><span class="panel-badge">Admin</span><h2>مركز إدارة المنتجات</h2><p>أضف المنتجات ومسارات الصور وحدّث الكتالوج فوراً.</p></div></div><form id="admin-form" class="admin-form"><div class="form-field"><label for="prod-name">اسم المنتج</label><input id="prod-name" name="name" type="text" placeholder="مثال: لبن عضوي من آسيا" required></div><div class="form-field"><label for="prod-price">السعر</label><input id="prod-price" name="price" type="number" step="0.01" placeholder="6.90" required></div><div class="form-field"><label for="prod-category">الفئة</label><select id="prod-category" name="category"><option value="meat">منتجات اللحوم</option><option value="dairy">الألبان والأجبان</option><option value="oil">الزيت والصلصات</option><option value="vegetable">الخضروات</option><option value="rice">الأرز والحبوب</option></select></div><div class="form-field"><label for="prod-unit">الوحدة</label><select id="prod-unit" name="unit"><option value="unitKg">كغ</option><option value="unitPack">عبوة</option><option value="unitBottle">زجاجة</option><option value="unitPiece">قطعة</option></select></div><div class="form-field full"><label for="prod-img">مسار الصورة</label><input id="prod-img" name="image" type="text" placeholder="new-product.jpg" required></div><div class="form-field full"><label for="prod-desc">الوصف</label><textarea id="prod-desc" name="desc" placeholder="وصف قصير للمنتج"></textarea></div><div class="form-field full"><label><input type="checkbox" name="featured"> تحديده كمنتج مميز</label></div><div class="admin-actions"><button type="submit" class="btn-admin">أضف إلى الكتالوج</button><button type="button" id="reset-form-btn" class="btn-secondary">إعادة ضبط</button></div></form></section><aside class="catalog-panel"><div class="admin-panel-header"><div><span class="panel-badge">معاينة</span><h2>معاينة المنتج المباشرة</h2><p>يتم تحديث معاينة البطاقة أثناء الكتابة.</p></div></div><article class="preview-card"><img id="preview-image" class="preview-thumb" src="../images/promo-urun.jpg" alt="Preview" width="120" height="120"><div class="preview-meta"><strong id="preview-name">اسم المنتج</strong><p id="preview-category">الفئة</p><strong id="preview-price">€0.00 / كغ</strong><p id="preview-desc">الوصف</p></div></article><div class="control-list" id="admin-product-list"></div></aside></div></section><section class="section" id="catalog"><div class="container catalog-panel"><div class="section-head"><div><h2>كتالوج المنتجات</h2><p>المنتجات الحالية مع فلاتر وبحث وبطاقات أنظف.</p></div></div><div class="catalog-toolbar"><div class="filter-group" id="category-filters"></div><input id="catalog-search" class="search-box" type="search" placeholder="ابحث عن منتج"></div><div class="product-grid" id="product-grid"></div></div></section><section class="section" id="prices"><div class="container price-panel"><div class="section-head"><div><h2>قائمة الأسعار</h2><p>عرض جدولي متزامن مع الكتالوج الحالي.</p></div></div><div class="price-table-wrap"><table class="price-table"><thead><tr><th>المنتج</th><th>الفئة</th><th>الوحدة</th><th>السعر</th></tr></thead><tbody id="price-table-body"></tbody></table></div></div></section></main><div class="toast-container" id="toast-container"></div><footer class="main-footer"><div class="container footer-grid"><div><strong>Asya Market</strong><p>كتالوج حديث ولوحة إدارة وواجهة سوق متعددة اللغات لزيلي.</p></div><div class="footer-links"><a href="#catalog">الكتالوج</a><a href="#prices">قائمة الأسعار</a><a href="#admin">الإدارة</a><a href="../cart/ar/">السلة</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></div></div></footer><script src="../script.js"></script></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asya Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip</a>
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="./" class="logo-link" aria-label="Asya Market">
+        <div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="16" stroke="currentColor" stroke-width="3" opacity="0.18"/><path d="M20 41L31.5 19L43 41" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.5 32H38.5" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="45.5" cy="20.5" r="4.5" fill="currentColor" opacity="0.18"/><circle cx="45.5" cy="20.5" r="2.2" fill="currentColor"/></svg></div>
+        <div class="brand-copy"><strong>Asya Market</strong><span>Asya Market</span></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a class="active" href="./">الرئيسية</a>
+        <a href="#catalog">المنتجات</a>
+        <a href="#prices">الأسعار</a>
+        <a href="#admin">الإدارة</a>
+        <a href="../checkout/ar/">الدفع</a>
+        <a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a>
+      </nav>
+      <div class="header-tools" id="header-tools">
+        <nav class="lang-selector" aria-label="Language selector"><a class="" href="../tr/">TR</a><a class="" href="../nl/">NL</a><a class="" href="../en/">EN</a><a class="" href="../fr/">FR</a><a class="active-lang" href="../ar/">AR</a></nav>
+        <a class="cart-button" href="../cart/ar/">السلة <span class="cart-badge">2</span></a>
+      </div>
+      <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="hero-banner">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-kicker">Asya Market</span>
+          <h1>واجهة متجر حديثة وتنقل أوضح وتجربة أقوى على الجوال.</h1>
+          <p>تمت إعادة بناء الصفحات الرئيسية والسلة والدفع لكل اللغات بنفس أسلوب التصميم.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#catalog">عرض المنتجات</a>
+            <a class="btn-secondary" href="#admin">لوحة الإدارة</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>5 لغات</strong><span>مبدل اللغة واضح</span></div>
+            <div class="hero-stat"><strong>متجاوب</strong><span>متوافق مع الجوال</span></div>
+            <div class="hero-stat"><strong>الدفع جاهز</strong><span>مسار السلة مكتمل</span></div>
+          </div>
+        </div>
+        <article class="hero-card">
+          <div class="hero-media"></div>
+          <div class="hero-card-content">
+            <div class="panel-badge">الدفع</div>
+            <div>
+              <h2>Asya Market Checkout</h2>
+              <p>صفحة دفع بسيطة وبخطوات أقل تساعد على الإكمال خاصة على الجوال.</p>
+            </div>
+            <a class="primary-link" href="../checkout/ar/">المتابعة إلى الدفع</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container promo-strip">
+        <article class="info-card"><span class="panel-badge">01</span><h3>مبدل اللغة واضح</h3><p>مبدل اللغة ظاهر في الترويسة وداخل قائمة الجوال.</p></article>
+        <article class="info-card"><span class="panel-badge">02</span><h3>مسار السلة مكتمل</h3><p>المنتجات والسلة والدفع أصبحت ضمن مسار واحد واضح.</p></article>
+        <article class="info-card"><span class="panel-badge">03</span><h3>متوافق مع الجوال</h3><p>على الشاشات الصغيرة يتحول التصميم إلى عمود واحد مع أزرار لمس أكبر.</p></article>
+      </div>
+    </section>
+    <section class="section" id="catalog">
+      <div class="container catalog-layout">
+        <section class="catalog-panel">
+          <div class="section-head"><h1 style="font-size:clamp(2rem,4vw,3rem);max-width:none;">كتالوج المنتجات</h1><p>تم تحسين الفئات والبحث وبطاقات المنتجات لتكون أوضح وأسهل.</p></div>
+          <div class="toolbar">
+            <div class="filter-group">
+              <button class="filter-pill active" type="button">الكل</button>
+              <button class="filter-pill" type="button">لحوم</button>
+              <button class="filter-pill" type="button">ألبان</button>
+              <button class="filter-pill" type="button">زيوت</button>
+              <button class="filter-pill" type="button">خضار</button>
+            </div>
+            <input class="search-box" type="search" placeholder="ابحث عن منتج">
+          </div>
+          <div class="product-grid">
+            <article class="product-card"><div class="product-media"><div class="product-visual"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 42C14 31.5066 22.5066 23 33 23H37C43.6274 23 49 28.3726 49 35V39C49 44.5228 44.5228 49 39 49H21C17.134 49 14 45.866 14 42Z" fill="currentColor" opacity="0.18"/><path d="M22 31H44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M27 23L31 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M39 23L35 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="product-content"><div class="product-meta"><span class="tag">لحوم</span><strong>€12.50</strong></div><h3>Asya Dana Kıyma</h3><p class="muted">Premium kalite günlük ürün.</p><div class="price">€12.50</div><div class="unit">/ kg</div><div class="product-actions"><a class="btn-primary" href="../cart/ar/">السلة</a><a class="btn-secondary" href="../checkout/ar/">الدفع</a></div></div></article>
+            <article class="product-card"><div class="product-media"><div class="product-visual"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 17H46V47H18V17Z" fill="currentColor" opacity="0.18"/><path d="M18 19C18 15.6863 20.6863 13 24 13H40C43.3137 13 46 15.6863 46 19V45C46 48.3137 43.3137 51 40 51H24C20.6863 51 18 48.3137 18 45V19Z" stroke="currentColor" stroke-width="4"/><path d="M24 25H40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="product-content"><div class="product-meta"><span class="tag">ألبان</span><strong>€8.99</strong></div><h3>Asya Beyaz Peynir</h3><p class="muted">Kahvaltı için dengeli ürün sunumu.</p><div class="price">€8.99</div><div class="unit">/ paket</div><div class="product-actions"><a class="btn-primary" href="../cart/ar/">السلة</a><a class="btn-secondary" href="../checkout/ar/">الدفع</a></div></div></article>
+          </div>
+        </section>
+        <aside class="catalog-panel">
+          <span class="panel-badge">الدفع</span>
+          <h2 style="margin:.8rem 0;">المتابعة إلى الدفع</h2>
+          <p>صفحة دفع بسيطة وبخطوات أقل تساعد على الإكمال خاصة على الجوال.</p>
+          <div class="preview-card"><div class="preview-thumb"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 24C18 20.6863 20.6863 18 24 18H40C43.3137 18 46 20.6863 46 24V42C46 45.3137 43.3137 48 40 48H24C20.6863 48 18 45.3137 18 42V24Z" fill="currentColor" opacity="0.18"/><path d="M24 24H40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M26 32H38" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M28 40H36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div><div><strong>Basmati Pirinç</strong><p class="muted">€14.50 / paket</p><a class="primary-link" style="margin-top:.8rem;" href="../checkout/ar/">الدفع</a></div></div>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="admin">
+      <div class="container dashboard-grid">
+        <section class="admin-panel">
+          <span class="panel-badge">الإدارة</span>
+          <h2 style="margin:.8rem 0;">إدارة المنتجات</h2>
+          <p>تم تبسيط الحقول وجعل قسم الإدارة أكثر ترتيبًا.</p>
+          <form class="admin-form">
+            <div class="form-field"><label>Ürün</label><input class="input" type="text" placeholder="Asya Ürün"></div>
+            <div class="form-field"><label>Fiyat</label><input class="input" type="number" placeholder="6.90"></div>
+            <div class="form-field"><label>Kategori</label><input class="input" type="text" placeholder="Kategori"></div>
+            <div class="form-field"><label>Birim</label><input class="input" type="text" placeholder="kg"></div>
+            <div class="field-full"><label>Görsel Yolu</label><input class="input" type="text" placeholder="../images/urun.jpg"></div>
+            <div class="field-full"><label>Açıklama</label><textarea class="textarea" placeholder="Kısa açıklama"></textarea></div>
+            <div class="admin-actions field-full"><button class="btn-primary" type="submit">الإدارة</button><button class="btn-secondary" type="reset">Reset</button></div>
+          </form>
+        </section>
+        <section class="admin-panel">
+          <span class="panel-badge">Preview</span>
+          <h2 style="margin:.8rem 0;">المنتجات</h2>
+          <p>تم تحسين الفئات والبحث وبطاقات المنتجات لتكون أوضح وأسهل.</p>
+          <div class="preview-card"><div class="preview-thumb"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 42C14 31.5066 22.5066 23 33 23H37C43.6274 23 49 28.3726 49 35V39C49 44.5228 44.5228 49 39 49H21C17.134 49 14 45.866 14 42Z" fill="currentColor" opacity="0.18"/><path d="M22 31H44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M27 23L31 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M39 23L35 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div><div><strong>Asya Dana Kıyma</strong><p class="muted">لحوم</p><div class="price">€12.50</div></div></div>
+        </section>
+      </div>
+    </section>
+    <section class="section" id="prices">
+      <div class="container price-panel">
+        <div class="section-head"><h1 style="font-size:clamp(2rem,4vw,3rem);max-width:none;">الأسعار الحالية</h1><p>يمكنك مراجعة المنتجات بسرعة عبر جدول مرتب.</p></div>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead><tr><th>المنتجات</th><th>الإدارة</th><th>الأسعار</th><th>الدفع</th></tr></thead>
+            <tbody><tr><td>Asya Dana Kıyma</td><td>لحوم</td><td>€12.50</td><td><a href="../checkout/ar/">الدفع</a></td></tr><tr><td>Asya Beyaz Peynir</td><td>ألبان</td><td>€8.99</td><td><a href="../checkout/ar/">الدفع</a></td></tr><tr><td>Basmati Pirinç</td><td>أرز</td><td>€14.50</td><td><a href="../checkout/ar/">الدفع</a></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer"><div class="container footer-grid"><div><strong>Asya Market</strong><p>تم تحديث واجهة متجر متعددة اللغات ومتجاوبة.</p></div><div class="footer-links"><a href="./">الرئيسية</a><a href="#catalog">المنتجات</a><a href="../cart/ar/">السلة</a><a href="../checkout/ar/">الدفع</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></div></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,4 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Asya Market | Catalogue Premium</title><link rel="stylesheet" href="../style.css"></head>
-<body><a class="skip-link" href="#main-content">Aller au contenu</a><header class="main-header"><div class="container header-inner"><a href="./" class="logo-link"><img src="../images/asya_market_logo.jpg" alt="Asya Market" class="brand-logo" width="58" height="58"><div class="brand-copy"><strong>Asya Market</strong><span>Expérience premium du marché à Zele</span></div></a><nav class="main-nav"><a href="./" class="active">Accueil</a><a href="#catalog">Catalogue</a><a href="#prices">Liste des Prix</a><a href="#admin">Admin</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></nav><div class="header-tools"><nav class="lang-selector" aria-label="Sélecteur de langue"><a href="../tr/">TR</a><a href="../nl/">NL</a><a href="../en/">EN</a><a href="../fr/" class="active-lang">FR</a><a href="../ar/">AR</a></nav><a class="cart-button" href="../cart/fr/">Panier <span class="cart-badge" id="cart-badge">0</span></a></div><button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button></div></header><main id="main-content"><section class="hero-banner"><div class="container hero-grid"><div class="hero-copy"><span class="hero-kicker">Sélection Asya Market</span><h1>Un catalogue plus propre, une meilleure présentation des prix et une administration plus fluide.</h1><p>Cette interface multilingue réunit navigation produit, gestion en direct et expérience panier plus rapide.</p><div class="hero-actions"><a href="#catalog" class="btn-primary">Découvrir le Catalogue</a><a href="#admin" class="btn-secondary">Ajouter un Produit</a></div><div class="hero-stats"><div class="hero-stat"><strong>5+</strong><span>Groupes de produits actifs</span></div><div class="hero-stat"><strong>5</strong><span>Langues prises en charge</span></div><div class="hero-stat"><strong>Live</strong><span>Contrôle instantané du catalogue</span></div></div></div><div class="hero-visual"><article class="hero-card"><img src="../images/promo-urun.jpg" alt="Featured Asya Market product" width="720" height="640"><div class="hero-card-content"><h2>Produit vedette : Riz Basmati Premium</h2><p>Présentation plus nette, prix lisibles et image premium plus forte.</p></div></article></div></div></section><section class="section"><div class="container promo-strip"><article class="info-card"><h3>Gestion produit avec photo</h3><p>Ajoutez chemin image, prix, catégorie et description directement depuis le panneau admin.</p></article><article class="info-card"><h3>Structure orientée catalogue</h3><p>Des cartes plus grandes, un meilleur espacement et des filtres catégorie améliorent la navigation.</p></article><article class="info-card"><h3>Tableau de prix inclus</h3><p>Une section dédiée aide à consulter rapidement les offres actuelles.</p></article></div></section><section class="section" id="admin"><div class="container dashboard-grid"><section class="admin-panel"><div class="admin-panel-header"><div><span class="panel-badge">Admin</span><h2>Centre de Gestion des Produits</h2><p>Ajoutez des produits, chemins d’image et mettez à jour le catalogue immédiatement.</p></div></div><form id="admin-form" class="admin-form"><div class="form-field"><label for="prod-name">Nom du Produit</label><input id="prod-name" name="name" type="text" placeholder="Exemple : Yaourt Bio Asya" required></div><div class="form-field"><label for="prod-price">Prix</label><input id="prod-price" name="price" type="number" step="0.01" placeholder="6.90" required></div><div class="form-field"><label for="prod-category">Catégorie</label><select id="prod-category" name="category"><option value="meat">Produits Carnés</option><option value="dairy">Produits Laitiers</option><option value="oil">Huile et Sauce</option><option value="vegetable">Légumes</option><option value="rice">Riz et Céréales</option></select></div><div class="form-field"><label for="prod-unit">Unité</label><select id="prod-unit" name="unit"><option value="unitKg">kg</option><option value="unitPack">paquet</option><option value="unitBottle">bouteille</option><option value="unitPiece">pièce</option></select></div><div class="form-field full"><label for="prod-img">Chemin de l’image</label><input id="prod-img" name="image" type="text" placeholder="new-product.jpg" required></div><div class="form-field full"><label for="prod-desc">Description</label><textarea id="prod-desc" name="desc" placeholder="Courte description du produit"></textarea></div><div class="form-field full"><label><input type="checkbox" name="featured"> Marquer comme produit vedette</label></div><div class="admin-actions"><button type="submit" class="btn-admin">Ajouter au Catalogue</button><button type="button" id="reset-form-btn" class="btn-secondary">Réinitialiser</button></div></form></section><aside class="catalog-panel"><div class="admin-panel-header"><div><span class="panel-badge">Aperçu</span><h2>Aperçu Produit en Direct</h2><p>L’aperçu de la carte produit se met à jour pendant la saisie.</p></div></div><article class="preview-card"><img id="preview-image" class="preview-thumb" src="../images/promo-urun.jpg" alt="Preview" width="120" height="120"><div class="preview-meta"><strong id="preview-name">Nom du Produit</strong><p id="preview-category">Catégorie</p><strong id="preview-price">€0.00 / kg</strong><p id="preview-desc">Description</p></div></article><div class="control-list" id="admin-product-list"></div></aside></div></section><section class="section" id="catalog"><div class="container catalog-panel"><div class="section-head"><div><h2>Catalogue Produits</h2><p>Produits actuels avec filtres, recherche et cartes plus propres.</p></div></div><div class="catalog-toolbar"><div class="filter-group" id="category-filters"></div><input id="catalog-search" class="search-box" type="search" placeholder="Rechercher un produit"></div><div class="product-grid" id="product-grid"></div></div></section><section class="section" id="prices"><div class="container price-panel"><div class="section-head"><div><h2>Liste des Prix</h2><p>Vue tableau synchronisée avec le catalogue actuel.</p></div></div><div class="price-table-wrap"><table class="price-table"><thead><tr><th>Produit</th><th>Catégorie</th><th>Unité</th><th>Prix</th></tr></thead><tbody id="price-table-body"></tbody></table></div></div></section></main><div class="toast-container" id="toast-container"></div><footer class="main-footer"><div class="container footer-grid"><div><strong>Asya Market</strong><p>Catalogue moderne, panneau admin et vitrine multilingue pour Zele.</p></div><div class="footer-links"><a href="#catalog">Catalogue</a><a href="#prices">Liste des Prix</a><a href="#admin">Admin</a><a href="../cart/fr/">Panier</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></div></div></footer><script src="../script.js"></script></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asya Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip</a>
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="./" class="logo-link" aria-label="Asya Market">
+        <div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="16" stroke="currentColor" stroke-width="3" opacity="0.18"/><path d="M20 41L31.5 19L43 41" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.5 32H38.5" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="45.5" cy="20.5" r="4.5" fill="currentColor" opacity="0.18"/><circle cx="45.5" cy="20.5" r="2.2" fill="currentColor"/></svg></div>
+        <div class="brand-copy"><strong>Asya Market</strong><span>Asya Market</span></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a class="active" href="./">Accueil</a>
+        <a href="#catalog">Produits</a>
+        <a href="#prices">Prix</a>
+        <a href="#admin">Admin</a>
+        <a href="../checkout/fr/">Paiement</a>
+        <a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a>
+      </nav>
+      <div class="header-tools" id="header-tools">
+        <nav class="lang-selector" aria-label="Language selector"><a class="" href="../tr/">TR</a><a class="" href="../nl/">NL</a><a class="" href="../en/">EN</a><a class="active-lang" href="../fr/">FR</a><a class="" href="../ar/">AR</a></nav>
+        <a class="cart-button" href="../cart/fr/">Panier <span class="cart-badge">2</span></a>
+      </div>
+      <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="hero-banner">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-kicker">Asya Market</span>
+          <h1>Interface de marché moderne, navigation plus nette et meilleure expérience mobile.</h1>
+          <p>Les pages d’accueil, panier et paiement ont été refaites dans le même style pour toutes les langues.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#catalog">Voir les Produits</a>
+            <a class="btn-secondary" href="#admin">Panneau Admin</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>5 Langues</strong><span>Sélecteur de langue visible</span></div>
+            <div class="hero-stat"><strong>Responsive</strong><span>Adapté au mobile</span></div>
+            <div class="hero-stat"><strong>Paiement Prêt</strong><span>Flux panier complet</span></div>
+          </div>
+        </div>
+        <article class="hero-card">
+          <div class="hero-media"></div>
+          <div class="hero-card-content">
+            <div class="panel-badge">Paiement</div>
+            <div>
+              <h2>Asya Market Checkout</h2>
+              <p>Une page de paiement simple avec peu de distraction fonctionne mieux sur mobile.</p>
+            </div>
+            <a class="primary-link" href="../checkout/fr/">Continuer vers le paiement</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container promo-strip">
+        <article class="info-card"><span class="panel-badge">01</span><h3>Sélecteur de langue visible</h3><p>Le sélecteur de langue reste clairement visible dans le header et le menu mobile.</p></article>
+        <article class="info-card"><span class="panel-badge">02</span><h3>Flux panier complet</h3><p>Produits, panier et paiement forment maintenant un parcours plus clair.</p></article>
+        <article class="info-card"><span class="panel-badge">03</span><h3>Adapté au mobile</h3><p>Sur petit écran, la mise en page passe en une colonne avec de grandes zones tactiles.</p></article>
+      </div>
+    </section>
+    <section class="section" id="catalog">
+      <div class="container catalog-layout">
+        <section class="catalog-panel">
+          <div class="section-head"><h1 style="font-size:clamp(2rem,4vw,3rem);max-width:none;">Catalogue produits</h1><p>Catégories, recherche et cartes produits ont été rendues plus claires.</p></div>
+          <div class="toolbar">
+            <div class="filter-group">
+              <button class="filter-pill active" type="button">Tout</button>
+              <button class="filter-pill" type="button">Viande</button>
+              <button class="filter-pill" type="button">Laitier</button>
+              <button class="filter-pill" type="button">Huile</button>
+              <button class="filter-pill" type="button">Légumes</button>
+            </div>
+            <input class="search-box" type="search" placeholder="Rechercher un produit">
+          </div>
+          <div class="product-grid">
+            <article class="product-card"><div class="product-media"><div class="product-visual"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 42C14 31.5066 22.5066 23 33 23H37C43.6274 23 49 28.3726 49 35V39C49 44.5228 44.5228 49 39 49H21C17.134 49 14 45.866 14 42Z" fill="currentColor" opacity="0.18"/><path d="M22 31H44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M27 23L31 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M39 23L35 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="product-content"><div class="product-meta"><span class="tag">Viande</span><strong>€12.50</strong></div><h3>Asya Dana Kıyma</h3><p class="muted">Premium kalite günlük ürün.</p><div class="price">€12.50</div><div class="unit">/ kg</div><div class="product-actions"><a class="btn-primary" href="../cart/fr/">Panier</a><a class="btn-secondary" href="../checkout/fr/">Paiement</a></div></div></article>
+            <article class="product-card"><div class="product-media"><div class="product-visual"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 17H46V47H18V17Z" fill="currentColor" opacity="0.18"/><path d="M18 19C18 15.6863 20.6863 13 24 13H40C43.3137 13 46 15.6863 46 19V45C46 48.3137 43.3137 51 40 51H24C20.6863 51 18 48.3137 18 45V19Z" stroke="currentColor" stroke-width="4"/><path d="M24 25H40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="product-content"><div class="product-meta"><span class="tag">Laitier</span><strong>€8.99</strong></div><h3>Asya Beyaz Peynir</h3><p class="muted">Kahvaltı için dengeli ürün sunumu.</p><div class="price">€8.99</div><div class="unit">/ paket</div><div class="product-actions"><a class="btn-primary" href="../cart/fr/">Panier</a><a class="btn-secondary" href="../checkout/fr/">Paiement</a></div></div></article>
+          </div>
+        </section>
+        <aside class="catalog-panel">
+          <span class="panel-badge">Paiement</span>
+          <h2 style="margin:.8rem 0;">Continuer vers le paiement</h2>
+          <p>Une page de paiement simple avec peu de distraction fonctionne mieux sur mobile.</p>
+          <div class="preview-card"><div class="preview-thumb"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 24C18 20.6863 20.6863 18 24 18H40C43.3137 18 46 20.6863 46 24V42C46 45.3137 43.3137 48 40 48H24C20.6863 48 18 45.3137 18 42V24Z" fill="currentColor" opacity="0.18"/><path d="M24 24H40" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M26 32H38" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M28 40H36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div><div><strong>Basmati Pirinç</strong><p class="muted">€14.50 / paket</p><a class="primary-link" style="margin-top:.8rem;" href="../checkout/fr/">Paiement</a></div></div>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="admin">
+      <div class="container dashboard-grid">
+        <section class="admin-panel">
+          <span class="panel-badge">Admin</span>
+          <h2 style="margin:.8rem 0;">Gestion des produits</h2>
+          <p>Les champs du formulaire ont été simplifiés et l’admin est plus propre.</p>
+          <form class="admin-form">
+            <div class="form-field"><label>Ürün</label><input class="input" type="text" placeholder="Asya Ürün"></div>
+            <div class="form-field"><label>Fiyat</label><input class="input" type="number" placeholder="6.90"></div>
+            <div class="form-field"><label>Kategori</label><input class="input" type="text" placeholder="Kategori"></div>
+            <div class="form-field"><label>Birim</label><input class="input" type="text" placeholder="kg"></div>
+            <div class="field-full"><label>Görsel Yolu</label><input class="input" type="text" placeholder="../images/urun.jpg"></div>
+            <div class="field-full"><label>Açıklama</label><textarea class="textarea" placeholder="Kısa açıklama"></textarea></div>
+            <div class="admin-actions field-full"><button class="btn-primary" type="submit">Admin</button><button class="btn-secondary" type="reset">Reset</button></div>
+          </form>
+        </section>
+        <section class="admin-panel">
+          <span class="panel-badge">Preview</span>
+          <h2 style="margin:.8rem 0;">Produits</h2>
+          <p>Catégories, recherche et cartes produits ont été rendues plus claires.</p>
+          <div class="preview-card"><div class="preview-thumb"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 42C14 31.5066 22.5066 23 33 23H37C43.6274 23 49 28.3726 49 35V39C49 44.5228 44.5228 49 39 49H21C17.134 49 14 45.866 14 42Z" fill="currentColor" opacity="0.18"/><path d="M22 31H44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M27 23L31 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M39 23L35 18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div><div><strong>Asya Dana Kıyma</strong><p class="muted">Viande</p><div class="price">€12.50</div></div></div>
+        </section>
+      </div>
+    </section>
+    <section class="section" id="prices">
+      <div class="container price-panel">
+        <div class="section-head"><h1 style="font-size:clamp(2rem,4vw,3rem);max-width:none;">Prix actuels</h1><p>Consultez rapidement les produits en format tableau.</p></div>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead><tr><th>Produits</th><th>Admin</th><th>Prix</th><th>Paiement</th></tr></thead>
+            <tbody><tr><td>Asya Dana Kıyma</td><td>Viande</td><td>€12.50</td><td><a href="../checkout/fr/">Paiement</a></td></tr><tr><td>Asya Beyaz Peynir</td><td>Laitier</td><td>€8.99</td><td><a href="../checkout/fr/">Paiement</a></td></tr><tr><td>Basmati Pirinç</td><td>Riz</td><td>€14.50</td><td><a href="../checkout/fr/">Paiement</a></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer"><div class="container footer-grid"><div><strong>Asya Market</strong><p>Interface multilingue responsive mise à jour.</p></div><div class="footer-links"><a href="./">Accueil</a><a href="#catalog">Produits</a><a href="../cart/fr/">Panier</a><a href="../checkout/fr/">Paiement</a><a href="https://www.it-solutions-cakir.be/nl/" target="_blank" rel="noopener noreferrer">IT Solutions</a></div></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
